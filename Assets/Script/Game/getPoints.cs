@@ -15,7 +15,7 @@ public class getPoints : MonoBehaviour {
                 if (player != null)
                 {
                     player.Points += 10;
-                    Debug.Log(player.Points);
+                    Push.player = null;
                 }
             }
         }
