@@ -18,7 +18,6 @@ public class Throwable : MonoBehaviour {
         //If touched by baby hand, attach
         if((collision.gameObject.tag == "Baby") && (!Attached) && (Affected))
         {
-            Debug.Log("Attached!");
             Joint = gameObject.AddComponent<FixedJoint>();
             //Get the Attachement somewhere at the arm
             Joint.connectedBody = collision.collider.gameObject.transform.parent.GetComponentInChildren<Rigidbody>();
@@ -31,13 +30,9 @@ public class Throwable : MonoBehaviour {
 
     void Update()
     {
-        if(Attached)
-        {
-            Debug.Log(rigidbody.velocity.magnitude);
-        }
+
         if(Affected && Attached && (rigidbody.velocity.magnitude > 50f))
         {
-            Debug.Log("Detached!");
             Destroy(gameObject.GetComponent<FixedJoint>());
             Attached = false;
             Affected = false;

@@ -8,7 +8,7 @@ public class timer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         CheckState = GetComponent<checkState>();
-        Invoke("SetUnsafe", 10);
+        Invoke("SetUnsafe", 30);
 	}
 	
 	// Update is called once per frame
