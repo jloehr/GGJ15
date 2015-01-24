@@ -13,6 +13,13 @@ public class TwoPlayerCheck : MonoBehaviour {
     void Start()
     {
         SinglePlayer = true;
+
+        Rect PlayerOneRect = new Rect(0, 0, 1, 1);
+        PlayerOne.rect = PlayerOneRect;
+
+        Rect PlayerTwoRect = new Rect(0.5f, 0, 0.5f, 1);
+        PlayerTwo.rect = PlayerTwoRect;
+        PlayerTwo.enabled = false;
     }
 
     void Update()
