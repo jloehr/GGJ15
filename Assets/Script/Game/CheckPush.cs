@@ -20,6 +20,7 @@ public class CheckPush : MonoBehaviour
         {
             player.Points -= 30;
             player = null;
+            player.caught++;
         }
     }
 }
