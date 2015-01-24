@@ -3,10 +3,15 @@ using System.Collections;
 
 public class CheckPush : MonoBehaviour
 {
-
+    public Player player;
     public checkState tetst;
-    void OnCollisionEnter()
+
+    void OnCollisionEnter(Collision col)
     {
+        if (col.gameObject.tag == "Baby")
+        {
+            player = col.gameObject.GetComponentInParent<Player>();
+        }
         //if (tetst.save == false) { Debug.Log("erwischt"); }
         //Debug.Log("Hit");
     }

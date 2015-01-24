@@ -18,7 +18,12 @@ public class getPoints : MonoBehaviour {
     {
         if ((col.gameObject.tag != "Baby") && (checkActualState.save == true))
         {
-            Debug.Log("Punkt erhalten");
+            Player player = GetComponent<Player>();
+            if(player != null)
+            {
+                player.Points += 10;
+                Debug.Log(player.Points);
+            }
         }
     }
 }
