@@ -18,9 +18,14 @@ public class CheckPush : MonoBehaviour
     {
         if ((MotherSingleton.Instance.CheckState.save == false) && (rigidbody.velocity.y > 1))
         {
-            player.Points -= 30;
-            player = null;
-            player.caught++;
+            if (player != null)
+            {
+                player.Points -= 30;
+                player.caught++;
+                player = null;
+
+            }
+
         }
     }
 }
