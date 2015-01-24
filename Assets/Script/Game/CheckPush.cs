@@ -4,7 +4,6 @@ using System.Collections;
 public class CheckPush : MonoBehaviour
 {
     public Player player;
-    public checkState tetst;
 
     void OnCollisionEnter(Collision col)
     {
@@ -17,7 +16,7 @@ public class CheckPush : MonoBehaviour
     }
     void Update()
     {
-        if ((tetst.save == false) && (rigidbody.velocity.y > 1))
+        if ((MotherSingleton.Instance.CheckState.save == false) && (rigidbody.velocity.y > 1))
         {
             Debug.Log("erwischt");
         }

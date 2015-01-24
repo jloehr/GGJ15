@@ -3,12 +3,11 @@ using System.Collections;
 
 public class getPoints : MonoBehaviour {
 
-    public checkState checkActualState;
 	// Use this for initialization
 
     void OnCollisionEnter(Collision col)
     {
-        if ((col.gameObject.tag != "Baby") && (checkActualState.save == true))
+        if ((col.gameObject.tag != "Baby") && (MotherSingleton.Instance.CheckState.save == true))
         {
             CheckPush Push = GetComponent<CheckPush>();
             if(Push != null)
