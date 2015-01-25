@@ -14,22 +14,13 @@ public class checkState : MonoBehaviour {
     {
         if (save)
         {
-            bool test = true;
-            anim.SetBool("turnRight", test);
-            test = false;
+            anim.Play("turnRight");
         }
         else
         {
-            bool test = true;
-            anim.SetBool("turnLeft", test);
-            test = false;
+            anim.Play("turnLeft");
         }
         save = !save;
     }
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 
 }

@@ -5,25 +5,47 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
     public int Points { get; set; }
-    public Text Text;
+    public Text PointsText;
+    public Text CaughtText;
+    public Text LooseText;
     private int _caught;
 
     public int caught
     {
         get { return _caught; }
         set { _caught = value;
-        if (_caught > 3)
+        if (_caught >= 3)
+            {
+                LooseText.enabled = true;
+                Invoke("Restart", 10);
+            }
+        else if( _caught > 0)
         {
-            Text.text = "you Lose";
+            CaughtText.enabled = true;
+            CancelInvoke("HideCaughtText");
+            Invoke("HideCaughtText", 5);
         }
         }
     }
-    
 
-	// Use this for initialization
-	
+
+    void HideCaughtText()
+    {
+        CaughtText.enabled = false;
+    }
+
+    void Restart()
+    {
+        _caught = 0;
+        Points = 0;
+        LooseText.enabled = false;
+    }
+
 	// Update is called once per frame
 	void Update () {
-        Text.text = "Points: " + Points;
+        if(_caught < 3)
+        {
+            PointsText.text = "Points: " + Points;
+        }
 	}
 }
