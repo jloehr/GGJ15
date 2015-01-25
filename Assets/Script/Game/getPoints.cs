@@ -6,7 +6,7 @@ public class getPoints : MonoBehaviour {
 	// Use this for initialization
     void OnCollisionEnter(Collision col)
     {
-        if ((col.gameObject.tag != "Baby") && (MotherSingleton.Instance.CheckState.save == true))
+        if ((col.gameObject.tag != "Baby") && (col.gameObject.tag != "Object") && (col.gameObject.tag != "NoPoints") && (MotherSingleton.Instance.CheckState.save == true))
         {
             CheckPush Push = GetComponent<CheckPush>();
             if(Push != null)
